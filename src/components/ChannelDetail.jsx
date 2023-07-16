@@ -9,7 +9,7 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null);
 
-  const [Videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   const { id } = useParams();
 
@@ -35,6 +35,11 @@ const ChannelDetail = () => {
             height: "300px",
           }}
         />
+        <ChannelCard channelDetail={channelDetail} marginTop="-110px" />
+      </Box>
+      <Box display="flex" p="2">
+        <Box sx={{ mr: { sm: "100px" } }} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   );
